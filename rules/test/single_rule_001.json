@@ -1,0 +1,90 @@
+{
+  "ruletype_id": "1",
+  "ruletype_name": "Process Creation",
+  "comment": "",
+  "name": "Block pythonw.exe script execution",
+  "description": "Block pythonw.exe script execution",
+  "pattern_severity": "high",
+  "action_label": "Detect",
+  "disposition_id": 20,
+  "field_values": [
+    {
+      "name": "GrandparentImageFilename",
+      "value": ".*",
+      "label": "Grandparent Image Filename",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "GrandparentCommandLine",
+      "value": ".*",
+      "label": "Grandparent Command Line",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "ParentImageFilename",
+      "value": ".*",
+      "label": "Parent Image Filename",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "ParentCommandLine",
+      "value": ".*",
+      "label": "Parent Command Line",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "ImageFilename",
+      "value": ".*",
+      "label": "Image Filename",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "CommandLine",
+      "value": "(?i).*pythonw\\.exe.*",
+      "label": "Command Line",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*pythonw\\.exe.*"
+        }
+      ],
+      "final_value": "(?i).*pythonw\\.exe.*"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "ruletype_id": "1",
+  "ruletype_name": "Process Creation",
+  "comment": "",
+  "name": "Block malicious process logr0tate",
+  "description": "Block malicious cron job detected running from /etc/cron.hourly/logr0tate",
+  "pattern_severity": "critical",
+  "action_label": "Block Execution",
+  "disposition_id": 30,
+  "field_values": [
+    {
+      "name": "GrandparentImageFilename",
+      "value": ".*",
+      "label": "Grandparent Image Filename",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "GrandparentCommandLine",
+      "value": ".*",
+      "label": "Grandparent Command Line",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "ParentImageFilename",
+      "value": ".*",
+      "label": "Parent Image Filename",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "ParentCommandLine",
+      "value": ".*",
+      "label": "Parent Command Line",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "ImageFilename",
+      "value": ".*",
+      "label": "Image Filename",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*"
+        }
+      ],
+      "final_value": ".*"
+    },
+    {
+      "name": "CommandLine",
+      "value": "(?i).*logr0tate.*",
+      "label": "Command Line",
+      "type": "excludable",
+      "values": [
+        {
+          "label": "include",
+          "value": ".*logr0tate.*"
+        }
+      ],
+      "final_value": "(?i).*logr0tate.*"
+    }
+  ]
+}
